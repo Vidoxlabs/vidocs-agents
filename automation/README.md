@@ -21,6 +21,9 @@ Install required dependencies:
 pip install -r requirements.txt
 ```
 
+**Requirements:**
+- Python 3.9 or higher (see [docs/python-requirements.md](../docs/python-requirements.md))
+
 Or install individually:
 ```bash
 pip install jsonschema pyyaml

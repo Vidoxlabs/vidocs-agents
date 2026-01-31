@@ -7,12 +7,14 @@ This script calculates and updates confidence ratings for agents based on:
 - Success rate
 - Context changes
 - Feedback scores
+
+Requires Python 3.9+
 """
 
 import json
 import os
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Dict, List
 
 
@@ -48,7 +50,7 @@ class ConfidenceCalculator:
             
             # Update metadata
             metadata['confidence_rating'] = new_confidence
-            metadata['updated'] = datetime.now(datetime.UTC).isoformat().replace('+00:00', 'Z')
+            metadata['updated'] = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
             
             # Save updated metadata
             with open(metadata_file, 'w') as f:
