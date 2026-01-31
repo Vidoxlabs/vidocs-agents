@@ -20,17 +20,20 @@ python3 --version
 If you need to upgrade Python, visit [python.org](https://www.python.org/downloads/) or use your system's package manager:
 
 ### macOS (Homebrew)
+
 ```bash
 brew install python@3.11
 ```
 
 ### Ubuntu/Debian
+
 ```bash
 sudo apt update
 sudo apt install python3.11
 ```
 
 ### Windows
+
 Download from [python.org](https://www.python.org/downloads/windows/)
 
 ## Virtual Environment (Recommended)

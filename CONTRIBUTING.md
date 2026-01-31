@@ -31,28 +31,33 @@ Thank you for contributing to the vidocs-agents repository! This guide will help
 ## Contribution Types
 
 ### 1. New Agents
+
 - Add new agent configurations
 - Include complete metadata
 - Provide usage examples
 - Document capabilities and limitations
 
 ### 2. Agent Improvements
+
 - Update existing agents
 - Improve effectiveness scores
 - Add new capabilities
 - Fix bugs or issues
 
 ### 3. Prompts and Templates
+
 - Add new prompt templates
 - Improve existing prompts
 - Document prompt effectiveness
 
 ### 4. Documentation
+
 - Improve README files
 - Add tutorials and guides
 - Fix typos and clarifications
 
 ### 5. Automation
+
 - Enhance automation scripts
 - Add new validation rules
 - Improve reporting capabilities
@@ -94,6 +99,7 @@ Every agent contribution must include:
 ### Testing Requirements
 
 Before submitting:
+
 1. Validate metadata: `python3 automation/validators/validate_metadata.py`
 2. Test the agent in intended contexts
 3. Document test results in examples
@@ -106,16 +112,20 @@ Before submitting:
 # Prompt: [Name]
 
 ## Context
+
 [What this prompt is for]
 
 ## Variables
+
 - `{{variable1}}`: Description
 - `{{variable2}}`: Description
 
 ## Usage
+
 [Usage instructions]
 
 ## Effectiveness
+
 - Confidence: [0.0-1.0]
 - Success Rate: [%]
 - Last Updated: [Date]
@@ -124,6 +134,7 @@ Before submitting:
 ### Prompt Categories
 
 Place prompts in appropriate directories:
+
 - `system-prompts/`: Base system prompts
 - `task-prompts/`: Task-specific prompts
 - `templates/`: Reusable templates
@@ -150,6 +161,7 @@ Place prompts in appropriate directories:
 ### Before Submitting
 
 1. **Validate your changes**
+
    ```bash
    python3 automation/validators/validate_metadata.py
    ```
@@ -171,9 +183,11 @@ Place prompts in appropriate directories:
 
 ```markdown
 ## Description
+
 [Brief description of changes]
 
 ## Type of Change
+
 - [ ] New agent
 - [ ] Agent improvement
 - [ ] New prompt/template
@@ -182,6 +196,7 @@ Place prompts in appropriate directories:
 - [ ] Bug fix
 
 ## Checklist
+
 - [ ] Metadata validated
 - [ ] Examples provided
 - [ ] Documentation updated
@@ -189,9 +204,11 @@ Place prompts in appropriate directories:
 - [ ] Related agents cross-referenced
 
 ## Testing
+
 [Describe how you tested these changes]
 
 ## Related Issues
+
 [Link any related issues]
 ```
 
@@ -217,6 +234,7 @@ Place prompts in appropriate directories:
 ## Recognition
 
 Contributors will be recognized in:
+
 - README contributor section
 - Release notes
 - Agent metadata (author field)

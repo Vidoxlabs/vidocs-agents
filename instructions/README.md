@@ -4,7 +4,7 @@ Detailed instructions for various tasks and workflows.
 
 ## Structure
 
-```
+```text
 instructions/
 ├── development/        # Development workflow instructions
 ├── deployment/         # Deployment and release instructions
@@ -15,6 +15,7 @@ instructions/
 ## Format
 
 Instructions should be:
+
 - Clear and actionable
 - Step-by-step when appropriate
 - Include prerequisites

@@ -4,7 +4,7 @@ This directory contains automation tools for managing and analyzing agents in th
 
 ## Structure
 
-```
+```text
 automation/
 ├── scripts/            # Utility scripts
 │   ├── analyze_agents.py
@@ -22,9 +22,11 @@ pip install -r requirements.txt
 ```
 
 **Requirements:**
+
 - Python 3.9 or higher (see [docs/python-requirements.md](../docs/python-requirements.md))
 
 Or install individually:
+
 ```bash
 pip install jsonschema pyyaml
 ```
@@ -34,6 +36,7 @@ pip install jsonschema pyyaml
 ### Validators
 
 #### validate_metadata.py
+
 Validates all metadata files against the JSON schema.
 
 ```bash
@@ -41,12 +44,14 @@ python3 automation/validators/validate_metadata.py
 ```
 
 **Exit codes:**
+
 - `0`: All files valid
 - `1`: One or more files invalid
 
 ### Scripts
 
 #### analyze_agents.py
+
 Analyzes agent configurations for overlaps and relationships.
 
 ```bash
@@ -54,10 +59,12 @@ REPO_ROOT=. python3 automation/scripts/analyze_agents.py
 ```
 
 **Outputs:**
+
 - Console report
 - `docs/cross-reference-analysis.md`
 
 #### calculate_confidence.py
+
 Calculates and updates confidence ratings based on usage data.
 
 ```bash
@@ -65,6 +72,7 @@ REPO_ROOT=. python3 automation/scripts/calculate_confidence.py
 ```
 
 **Outputs:**
+
 - Console updates
 - `docs/confidence-ratings.md`
 - Updated metadata files
@@ -72,6 +80,7 @@ REPO_ROOT=. python3 automation/scripts/calculate_confidence.py
 ## CI/CD Integration
 
 These tools are integrated into GitHub Actions workflows:
+
 - `.github/workflows/validate-agents.yml` - Runs on PR/push
 - `.github/workflows/weekly-update.yml` - Runs weekly
 

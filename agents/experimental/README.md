@@ -5,6 +5,7 @@ This directory contains agents that are under active development, testing, or ex
 ## ⚠️ Important
 
 Agents in this directory are:
+
 - **Not production-ready**
 - **May change significantly**
 - **Have lower confidence ratings**
@@ -13,6 +14,7 @@ Agents in this directory are:
 ## Purpose
 
 The experimental directory serves as:
+
 - Testing ground for new agent concepts
 - Sandbox for trying new approaches
 - Incubation space before promotion to stable agents
@@ -20,6 +22,7 @@ The experimental directory serves as:
 ## Promotion Criteria
 
 An experimental agent can be promoted to `general-purpose` or `specialized` when it meets:
+
 1. Confidence rating ≥ 0.70
 2. Success rate ≥ 80%
 3. Usage count ≥ 50
@@ -29,6 +32,7 @@ An experimental agent can be promoted to `general-purpose` or `specialized` when
 ## Contributing
 
 We encourage experimentation! Feel free to:
+
 - Add new experimental agents
 - Test and provide feedback
 - Suggest improvements

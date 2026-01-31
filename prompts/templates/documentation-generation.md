@@ -1,27 +1,32 @@
 # Documentation Generation Template
 
 ## Context
+
 Template for generating comprehensive documentation from code.
 
 ## Template
 
-```markdown
+````markdown
 # {{module_name}}
 
 ## Overview
+
 {{overview}}
 
 ## Installation
+
 {{installation_instructions}}
 
 ## Usage
 
 ### Basic Usage
+
 \```{{language}}
 {{basic_example}}
 \```
 
 ### Advanced Usage
+
 \```{{language}}
 {{advanced_example}}
 \```
@@ -29,12 +34,14 @@ Template for generating comprehensive documentation from code.
 ## API Reference
 
 ### {{class_or_function_name}}
+
 {{description}}
 
 **Parameters:**
 {{#each parameters}}
+
 - `{{name}}` ({{type}}): {{description}}
-{{/each}}
+  {{/each}}
 
 **Returns:**
 {{return_type}}: {{return_description}}
@@ -45,25 +52,32 @@ Template for generating comprehensive documentation from code.
 \```
 
 ## Configuration
+
 {{configuration_details}}
 
 ## Error Handling
+
 {{error_handling_info}}
 
 ## Best Practices
+
 {{best_practices}}
 
 ## Troubleshooting
+
 {{common_issues}}
 
 ## Contributing
+
 {{contributing_guidelines}}
 
 ## License
+
 {{license_info}}
-```
+````
 
 ## Variables
+
 - `{{module_name}}`: Name of the module/package
 - `{{overview}}`: High-level description
 - `{{language}}`: Programming language
@@ -74,9 +88,11 @@ Template for generating comprehensive documentation from code.
 - `{{configuration_details}}`: Configuration options
 
 ## Usage
+
 Use this template when generating documentation for new modules or updating existing documentation.
 
 ## Effectiveness
+
 - Confidence: 0.90
 - Success Rate: 94%
 - Last Updated: 2026-01-31

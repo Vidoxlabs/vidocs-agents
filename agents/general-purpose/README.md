@@ -16,6 +16,7 @@ General purpose agents are versatile and can handle multiple types of tasks. The
 ## Creating General Purpose Agents
 
 General purpose agents should:
+
 - Have broad capabilities
 - Be well-documented with diverse examples
 - Handle graceful degradation for edge cases

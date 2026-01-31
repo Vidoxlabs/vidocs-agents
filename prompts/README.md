@@ -4,7 +4,7 @@ A curated collection of prompts for various AI models and contexts.
 
 ## Structure
 
-```
+```text
 prompts/
 ├── system-prompts/     # Base system prompts
 ├── task-prompts/       # Task-specific prompts
@@ -27,13 +27,16 @@ Each prompt should include:
 # Prompt: Code Review Assistant
 
 ## Context
+
 Designed for reviewing pull requests with focus on security and best practices.
 
 ## Variables
+
 - `{{language}}`: Programming language
 - `{{context}}`: Additional context about the codebase
 
 ## Effectiveness
+
 - Confidence: 0.85
 - Success Rate: 92%
 - Last Updated: 2026-01-31

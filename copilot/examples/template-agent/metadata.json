@@ -8,15 +8,8 @@
   "effectiveness_score": 0.0,
   "success_rate": 0,
   "usage_count": 0,
-  "context_compatibility": [
-    "general",
-    "development"
-  ],
-  "tags": [
-    "template",
-    "copilot",
-    "example"
-  ],
+  "context_compatibility": ["general", "development"],
+  "tags": ["template", "copilot", "example"],
   "author": "Vidoxlabs",
   "related_agents": [],
   "dependencies": []

@@ -5,6 +5,7 @@ The centralized agent-align configuration documents for Vidoxlabs. Unified intel
 ## 📋 Overview
 
 This repository serves as a central hub for:
+
 - **GitHub Copilot Configurations**: Custom agents, prompts, and instructions
 - **Generalized Agents**: Platform-agnostic agent configurations
 - **System Prompts**: Reusable prompt templates and chains
@@ -13,7 +14,7 @@ This repository serves as a central hub for:
 
 ## 🗂️ Repository Structure
 
-```
+```text
 vidocs-agents/
 ├── agents/                     # Generalized agent configurations
 │   ├── general-purpose/        # Multi-purpose agents
@@ -74,6 +75,7 @@ REPO_ROOT=. python3 automation/scripts/calculate_confidence.py
 ## 📊 Metadata and Ratings
 
 Each agent includes metadata for tracking:
+
 - **Confidence Rating** (0.0-1.0): Overall confidence in agent performance
 - **Effectiveness Score** (0.0-1.0): Measured effectiveness
 - **Success Rate** (%): Historical success percentage
@@ -82,8 +84,8 @@ Each agent includes metadata for tracking:
 
 ### Rating Formula
 
-```
-confidence = (success_rate * 0.4) + 
+```python
+confidence = (success_rate * 0.4) +
              (min(usage_count/100, 1.0) * 0.3) +
              (effectiveness_score * 0.3)
 ```
@@ -91,12 +93,15 @@ confidence = (success_rate * 0.4) +
 ## 🔄 Automation Features
 
 ### Cross-Reference Analysis
+
 Identifies overlapping capabilities, complementary agents, and optimization opportunities.
 
 ### Confidence Calculation
+
 Automatically updates confidence ratings based on usage data and effectiveness scores.
 
 ### Metadata Validation
+
 Ensures all agent metadata conforms to the defined schema.
 
 ## 📖 Documentation
@@ -121,6 +126,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 ## 📈 Reporting and Analytics
 
 Generated reports include:
+
 - Cross-reference analysis
 - Confidence ratings
 - Effectiveness trends

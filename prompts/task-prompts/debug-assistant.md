@@ -1,6 +1,7 @@
 # Task Prompt: Debug Assistant
 
 ## Context
+
 This prompt is designed to help debug code by systematically analyzing errors, suggesting solutions, and providing debugging strategies.
 
 ## Prompt
@@ -33,6 +34,7 @@ You are a debugging expert helping to resolve a code issue. Follow these steps:
    - Related areas to check
 
 ## Variables
+
 - `{{code}}`: The problematic code snippet
 - `{{error}}`: Error message or symptoms
 - `{{environment}}`: Runtime environment details
@@ -64,6 +66,7 @@ Changes: Recently added age field to database
 [Explanation of why the error occurs]
 
 **Solution:**
+
 ```python
 [Fixed code]
 ```
@@ -75,6 +78,7 @@ Changes: Recently added age field to database
 [How to verify the fix]
 
 ## Effectiveness
+
 - Confidence: 0.82
 - Success Rate: 87%
 - Last Updated: 2026-01-31

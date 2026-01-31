@@ -5,6 +5,7 @@ This guide explains the automation tools available in the vidocs-agents reposito
 ## Overview
 
 The automation system provides tools for:
+
 - **Validation**: Ensuring metadata compliance
 - **Analysis**: Cross-referencing agents and identifying relationships
 - **Rating**: Calculating confidence and effectiveness scores
@@ -19,18 +20,21 @@ The automation system provides tools for:
 **Location**: `automation/validators/validate_metadata.py`
 
 **Usage**:
+
 ```bash
 python3 automation/validators/validate_metadata.py
 ```
 
 **What it checks**:
+
 - Schema compliance
 - Required fields present
 - Data type correctness
 - Value constraints (e.g., ratings between 0-1)
 
 **Output**:
-```
+
+```text
 Validating 5 metadata files...
 
 ✓ template-agent.json is valid
@@ -45,6 +49,7 @@ Validating 5 metadata files...
 ```
 
 **Exit codes**:
+
 - `0`: All files valid
 - `1`: One or more files invalid
 
@@ -55,18 +60,21 @@ Validating 5 metadata files...
 **Location**: `automation/scripts/analyze_agents.py`
 
 **Usage**:
+
 ```bash
 REPO_ROOT=. python3 automation/scripts/analyze_agents.py
 ```
 
 **Features**:
+
 - Identifies capability overlaps
 - Finds context overlaps
 - Calculates agent similarity
 - Suggests related agents
 
 **Output**:
-```
+
+```markdown
 # Agent Cross-Reference Analysis Report
 
 Total agents analyzed: 8
@@ -86,6 +94,7 @@ Total agents analyzed: 8
 ```
 
 **Use cases**:
+
 - Finding complementary agents
 - Identifying redundancy
 - Discovering optimization opportunities
@@ -98,24 +107,28 @@ Total agents analyzed: 8
 **Location**: `automation/scripts/calculate_confidence.py`
 
 **Usage**:
+
 ```bash
 REPO_ROOT=. python3 automation/scripts/calculate_confidence.py
 ```
 
 **Algorithm**:
+
 ```python
-confidence = (success_rate * 0.4) + 
+confidence = (success_rate * 0.4) +
              (min(usage_count/100, 1.0) * 0.3) +
              (effectiveness_score * 0.3)
 ```
 
 **Factors**:
+
 - **Success Rate** (40%): Historical success percentage
 - **Usage Count** (30%): Number of uses (capped at 100)
 - **Effectiveness Score** (30%): Manual effectiveness rating
 
 **Output**:
-```
+
+```text
 Found 5 metadata files
 Updated template-agent.json: 0.00 → 0.00
 Updated code-reviewer.json: 0.65 → 0.72
@@ -128,16 +141,17 @@ Report saved to: docs/confidence-ratings.md
 ```
 
 **Generated Report**:
+
 ```markdown
 # Agent Confidence Ratings Report
 
-| Agent | Confidence | Effectiveness | Usage Count |
-|-------|------------|---------------|-------------|
-| docs-generator | 0.85 | 0.90 | 120 |
-| code-reviewer | 0.72 | 0.75 | 95 |
-| test-helper | 0.60 | 0.65 | 48 |
-| security-scanner | 0.58 | 0.60 | 35 |
-| template-agent | 0.00 | 0.00 | 0 |
+| Agent            | Confidence | Effectiveness | Usage Count |
+| ---------------- | ---------- | ------------- | ----------- |
+| docs-generator   | 0.85       | 0.90          | 120         |
+| code-reviewer    | 0.72       | 0.75          | 95          |
+| test-helper      | 0.60       | 0.65          | 48          |
+| security-scanner | 0.58       | 0.60          | 35          |
+| template-agent   | 0.00       | 0.00          | 0           |
 ```
 
 ## Integration with CI/CD
@@ -152,9 +166,9 @@ name: Validate Agents
 on:
   pull_request:
     paths:
-      - 'agents/**'
-      - 'copilot/**'
-      - 'schemas/**'
+      - "agents/**"
+      - "copilot/**"
+      - "schemas/**"
   push:
     branches:
       - main
@@ -164,28 +178,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-      
+          python-version: "3.x"
+
       - name: Install dependencies
         run: |
           pip install jsonschema pyyaml
-      
+
       - name: Validate metadata
         run: |
           python3 automation/validators/validate_metadata.py
-      
+
       - name: Analyze agents
         run: |
           REPO_ROOT=. python3 automation/scripts/analyze_agents.py
-      
+
       - name: Calculate confidence
         run: |
           REPO_ROOT=. python3 automation/scripts/calculate_confidence.py
-      
+
       - name: Upload reports
         uses: actions/upload-artifact@v3
         with:
@@ -214,6 +228,7 @@ exit 0
 ```
 
 Make executable:
+
 ```bash
 chmod +x .git/hooks/pre-commit
 ```
@@ -229,26 +244,26 @@ name: Weekly Confidence Update
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # Every Sunday at midnight
+    - cron: "0 0 * * 0" # Every Sunday at midnight
 
 jobs:
   update-confidence:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-      
+          python-version: "3.x"
+
       - name: Install dependencies
         run: pip install jsonschema pyyaml
-      
+
       - name: Update confidence ratings
         run: |
           REPO_ROOT=. python3 automation/scripts/calculate_confidence.py
-      
+
       - name: Commit updates
         run: |
           git config user.name "GitHub Actions"
@@ -276,28 +291,28 @@ import sys
 def validate_naming(agent_dir: Path) -> bool:
     """Check if agent follows naming conventions"""
     name = agent_dir.name
-    
+
     # Must be kebab-case
     if not all(c.islower() or c == '-' for c in name):
         print(f"✗ {name}: Must use kebab-case")
         return False
-    
+
     # Must not start or end with hyphen
     if name.startswith('-') or name.endswith('-'):
         print(f"✗ {name}: Cannot start/end with hyphen")
         return False
-    
+
     print(f"✓ {name}: Valid naming")
     return True
 
 def main():
     repo_root = Path(__file__).parent.parent.parent
     agent_dirs = list(repo_root.glob("*/agents/*/"))
-    
+
     valid_count = sum(1 for d in agent_dirs if validate_naming(d))
-    
+
     print(f"\n{valid_count}/{len(agent_dirs)} agents have valid names")
-    
+
     if valid_count < len(agent_dirs):
         sys.exit(1)
 
@@ -313,7 +328,7 @@ Extend `analyze_agents.py` with custom metrics:
 def analyze_effectiveness_trends(self) -> Dict:
     """Analyze effectiveness trends over time"""
     trends = []
-    
+
     for agent in self.agents:
         # Compare current vs historical effectiveness
         current = agent.get('effectiveness_score', 0)
@@ -323,7 +338,7 @@ def analyze_effectiveness_trends(self) -> Dict:
             'current_score': current,
             'trend': 'improving'  # Calculate based on history
         })
-    
+
     return {'trends': trends}
 ```
 
@@ -334,6 +349,7 @@ def analyze_effectiveness_trends(self) -> Dict:
 **Problem**: Schema validation errors
 
 **Solution**:
+
 1. Check the schema: `schemas/agent-metadata.schema.json`
 2. Verify required fields are present
 3. Check data types match schema
@@ -344,6 +360,7 @@ def analyze_effectiveness_trends(self) -> Dict:
 **Problem**: Confidence ratings not updating
 
 **Solution**:
+
 1. Verify metadata files are valid JSON
 2. Check that success_rate, usage_count, and effectiveness_score are present
 3. Ensure values are numeric
@@ -354,6 +371,7 @@ def analyze_effectiveness_trends(self) -> Dict:
 **Problem**: Cannot find agent files
 
 **Solution**:
+
 1. Set `REPO_ROOT` environment variable correctly
 2. Check file extensions (.yml, .yaml, .json)
 3. Ensure directory structure matches expected layout
@@ -383,11 +401,13 @@ def analyze_effectiveness_trends(self) -> Dict:
 ## Dependencies
 
 Required Python packages:
+
 ```bash
 pip install jsonschema pyyaml
 ```
 
 For development:
+
 ```bash
 pip install pytest black pylint
 ```

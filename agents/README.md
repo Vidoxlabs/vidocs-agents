@@ -4,7 +4,7 @@ This directory contains generalized agent configurations that can be used across
 
 ## Structure
 
-```
+```text
 agents/
 ├── general-purpose/    # Generic multi-purpose agents
 ├── specialized/        # Domain-specific agents (code, docs, data, etc.)
