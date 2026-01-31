@@ -9,6 +9,8 @@ on:
 jobs:
   update-confidence:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Need write permissions to push updates
     
     steps:
       - name: Checkout repository
