@@ -1,0 +1,10 @@
+{
+  "name": "backend-architect",
+  "version": "1.0.0",
+  "description": "Expert in Python FastAPI, Pydantic, and scalable API design",
+  "created": "2026-02-01T10:05:00Z",
+  "confidence_rating": 0.95,
+  "context_compatibility": ["python", "fastapi", "sql", "docker"],
+  "tags": ["backend", "api", "database", "python"],
+  "author": "Vidoxlabs"
+}
