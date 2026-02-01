@@ -3,12 +3,18 @@
   "version": "1.0.0",
   "description": "Validates health checks, metric exposure, and logging strategies",
   "created": "2026-01-31T21:15:00Z",
-  "confidence_rating": 0.9,
+  "confidence_rating": 0.0,
   "context_compatibility": [
     "docker_compose",
     "kubernetes",
     "prometheus_config"
   ],
-  "tags": ["observability", "monitoring", "sre", "logging"],
-  "author": "Vidoxlabs"
+  "tags": [
+    "observability",
+    "monitoring",
+    "sre",
+    "logging"
+  ],
+  "author": "Vidoxlabs",
+  "updated": "2026-02-01T02:51:58.710917Z"
 }

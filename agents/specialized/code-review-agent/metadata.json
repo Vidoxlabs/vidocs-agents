@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Specialized agent for comprehensive code reviews focusing on quality and best practices",
   "created": "2026-01-31T18:00:00Z",
-  "updated": "2026-01-31T18:50:26.545387Z",
+  "updated": "2026-02-01T02:51:58.710563Z",
   "confidence_rating": 0.88,
   "effectiveness_score": 0.8,
   "success_rate": 85,
@@ -14,8 +14,16 @@
     "refactoring",
     "quality_assurance"
   ],
-  "tags": ["code-review", "quality", "best-practices", "analysis"],
+  "tags": [
+    "code-review",
+    "quality",
+    "best-practices",
+    "analysis"
+  ],
   "author": "Vidoxlabs",
-  "related_agents": ["security-review-agent", "performance-analyzer"],
+  "related_agents": [
+    "security-review-agent",
+    "performance-analyzer"
+  ],
   "dependencies": []
 }

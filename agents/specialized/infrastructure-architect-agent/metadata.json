@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "General purpose IaC reviewer generalizing Violet37 principles",
   "created": "2026-01-31T20:00:00Z",
-  "updated": "2026-01-31T20:00:00Z",
-  "confidence_rating": 0.95,
+  "updated": "2026-02-01T02:51:58.710754Z",
+  "confidence_rating": 0.64,
   "effectiveness_score": 0.9,
   "success_rate": 92,
   "usage_count": 0,
@@ -14,8 +14,17 @@
     "terraform",
     "system_design"
   ],
-  "tags": ["iac", "sre", "docker", "consul", "architecture"],
+  "tags": [
+    "iac",
+    "sre",
+    "docker",
+    "consul",
+    "architecture"
+  ],
   "author": "Vidoxlabs",
-  "related_agents": ["code-review-agent", "security-guardian"],
+  "related_agents": [
+    "code-review-agent",
+    "security-guardian"
+  ],
   "dependencies": []
 }

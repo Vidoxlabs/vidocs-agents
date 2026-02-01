@@ -3,8 +3,18 @@
   "version": "1.0.0",
   "description": "Expert in TurboRepo, pnpm workspaces, and package architecture",
   "created": "2026-02-01T10:10:00Z",
-  "confidence_rating": 0.92,
-  "context_compatibility": ["turborepo", "pnpm", "javascript", "typescript"],
-  "tags": ["monorepo", "build-system", "architecture"],
-  "author": "Vidoxlabs"
+  "confidence_rating": 0.0,
+  "context_compatibility": [
+    "turborepo",
+    "pnpm",
+    "javascript",
+    "typescript"
+  ],
+  "tags": [
+    "monorepo",
+    "build-system",
+    "architecture"
+  ],
+  "author": "Vidoxlabs",
+  "updated": "2026-02-01T02:51:58.710075Z"
 }
