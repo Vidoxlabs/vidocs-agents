@@ -13,25 +13,28 @@ An agent is a configured AI assistant designed for specific tasks or contexts. E
 
 ## Step-by-Step Process
 
-### 1. Choose Agent Type
+### 1. Choose Agent Domain
 
-#### **GitHub Copilot Agent**
+Select the appropriate domain for your agent:
 
-- Location: `copilot/agents/`
-- Best for: GitHub-specific tasks, code generation, PR reviews
-- Template: `copilot/examples/template-agent/`
-
-#### **Generalized Agent**
-
-- Location: `agents/`
-- Best for: Platform-agnostic tasks, general purpose
-- Subdirectories: `general-purpose/`, `specialized/`, `experimental/`
+- **`backend/`**: Backend architecture, API design, database optimization
+- **`core/`**: Code review, documentation, general utilities
+- **`data/`**: Data management, SQL optimization, data pipeline
+- **`devops/`**: Infrastructure, deployment, monitoring, security
+- **`web/`**: Frontend, UI/UX, web development
 
 ### 2. Create Directory Structure
 
 ```bash
-mkdir -p copilot/agents/my-new-agent/examples
-cd copilot/agents/my-new-agent
+mkdir -p agents/[domain]/my-new-agent/examples
+cd agents/[domain]/my-new-agent
+```
+
+Example:
+
+```bash
+mkdir -p agents/backend/my-api-agent/examples
+cd agents/backend/my-api-agent
 ```
 
 ### 3. Create Configuration File
@@ -317,8 +320,9 @@ Use standardized context tags:
 ## Resources
 
 - [Metadata Schema](../schemas/agent-metadata.schema.json)
-- [Template Agent](../copilot/examples/template-agent/)
+- [Template Agent](../agents/template-agent/)
 - [Contributing Guide](../CONTRIBUTING.md)
+- [Repository Structure](../STRUCTURE.md)
 
 ## Support
 

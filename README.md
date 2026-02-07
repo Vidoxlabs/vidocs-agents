@@ -1,40 +1,35 @@
 # vidocs-agents
 
-The centralized agent-align configuration documents for Vidoxlabs. Unified intelligence repository housing Copilot agents, generalized agents, system prompts, and architectural context for current working and prior ecosystem(s).
+The centralized agent library and configuration documents for Vidoxlabs. A unified repository of domain-specific AI agents, system prompts, and architectural context for intelligent automation and development workflows.
 
 ## 📋 Overview
 
 This repository serves as a central hub for:
 
-- **GitHub Copilot Configurations**: Custom agents, prompts, and instructions
-- **Generalized Agents**: Platform-agnostic agent configurations
-- **System Prompts**: Reusable prompt templates and chains
-- **Instructions**: Task-specific workflow documentation
-- **Automation**: Tools for cross-referencing and effectiveness tracking
+- **Domain-Specific Agents**: AI agents organized by expertise area (Backend, Core, Data, DevOps, Web)
+- **Agent Configurations**: Standardized agent definitions with metadata and examples
+- **System Prompts**: Reusable prompt templates and reasoning chains
+- **Instructions**: Task-specific workflows and context overlays
+- **Automation**: Tools for validation, cross-referencing, and effectiveness tracking
 
 ## 🗂️ Repository Structure
 
 ```text
 vidocs-agents/
-├── agents/                     # Generalized agent configurations
-│   ├── general-purpose/        # Multi-purpose agents
-│   ├── specialized/            # Domain-specific agents
-│   └── experimental/           # Agents under development
-├── copilot/                    # GitHub Copilot specific
-│   ├── agents/                 # Copilot custom agents
-│   ├── prompts/                # Copilot prompts
-│   ├── instructions/           # Copilot instructions
-│   └── examples/               # Example configurations
+├── agents/                     # AI agent configurations
+│   ├── backend/                # Backend architecture agents
+│   ├── core/                   # Core functionality agents
+│   ├── data/                   # Data management agents
+│   ├── devops/                 # DevOps and infrastructure agents
+│   ├── web/                    # Frontend and web agents
+│   └── template-agent/         # Template for creating new agents
 ├── prompts/                    # Prompt library
 │   ├── system-prompts/         # Base system prompts
 │   ├── task-prompts/           # Task-specific prompts
 │   ├── templates/              # Reusable templates
 │   └── chains/                 # Multi-step prompt chains
-├── instructions/               # General instructions
-│   ├── development/            # Development workflows
-│   ├── deployment/             # Deployment procedures
-│   ├── testing/                # Testing strategies
-│   └── maintenance/            # Maintenance procedures
+├── instructions/               # Instructions and context
+│   └── context-overlays/       # Project-specific context overlays
 ├── schemas/                    # JSON schemas for validation
 ├── automation/                 # Automation tools
 │   ├── scripts/                # Utility scripts
@@ -46,14 +41,14 @@ vidocs-agents/
 
 ### Using an Agent
 
-1. Browse the available agents in `agents/` or `copilot/agents/`
+1. Browse the available agents in `agents/` organized by domain (backend, core, data, devops, web)
 2. Review the agent's `instructions.md` for usage details
 3. Check the `metadata.json` for confidence and effectiveness ratings
 4. Use the agent configuration in your workflow
 
 ### Creating a New Agent
 
-1. Copy the template from `copilot/examples/template-agent/`
+1. Copy the template from `agents/template-agent/`
 2. Customize the `agent.yml` configuration
 3. Write detailed instructions in `instructions.md`
 4. Add initial `metadata.json` with baseline ratings

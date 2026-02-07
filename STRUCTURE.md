@@ -6,39 +6,36 @@ This document outlines the organization of the `vidocs-agents` repository. Maint
 
 ### `agents/`
 
-The core logic definitions for AI agents.
+The core AI agent configurations organized by domain expertise.
 
-- **`general-purpose/`**: Agents that can work on any project (e.g., Doc Sentinel).
-- **`specialized/`**: Agents with deep domain expertise (e.g., Frontend Architect, Security Guardian).
-- **`experimental/`**: Agents in testing/beta.
+- **`backend/`**: Backend architecture and development agents
+- **`core/`**: Core functionality agents (code review, documentation, etc.)
+- **`data/`**: Data management and optimization agents
+- **`devops/`**: DevOps, infrastructure, and operations agents
+- **`web/`**: Frontend and web development agents
+- **`template-agent/`**: Template structure for creating new agents
 
 ### `instructions/`
 
-Knowledge injection files.
+Context and knowledge injection files.
 
-- **`context-overlays/`**: Project-specific context (e.g., `vidoxlabs-studio.md`) to specialize general agents.
-- **`tech-stacks/`**: Reusable guides for specific technologies (React, Python, Docker).
+- **`context-overlays/`**: Project-specific context to specialize agents (e.g., `vidoxlabs-studio.md`)
 
 ### `prompts/`
 
-Ready-to-use prompts for users.
+Reusable prompt library and templates.
 
-- **`chains/`**: Multi-step reasoning prompts (Chain of Thought).
-- **`system-prompts/`**: Raw system instructions for copying into LLMs.
-- **`task-prompts/`**: Quick-fire prompts for specific tasks (e.g., "Debug this").
-
-### `copilot/`
-
-Configurations for GitHub Copilot.
-
-- **`collections/`**: Groups of related prompts/instructions.
-- **`examples/`**: Demo files.
+- **`chains/`**: Multi-step reasoning prompts (Chain of Thought)
+- **`system-prompts/`**: Base system instructions
+- **`task-prompts/`**: Quick-fire prompts for specific tasks
+- **`templates/`**: Reusable prompt templates
 
 ### `automation/`
 
-Python scripts for validating and maintaining the repo.
+Python scripts for validation and repository maintenance.
 
-- **`validators/`**: Scripts to check JSON schemas and link validity.
+- **`scripts/`**: Utility scripts for analysis and processing
+- **`validators/`**: Scripts to check JSON schemas and metadata validity
 
 ## 🏷️ Naming Conventions
 

@@ -80,14 +80,17 @@ REPO_ROOT=. python3 automation/scripts/analyze_agents.py
 Total agents analyzed: 8
 
 ## Capability Overlaps
+
 - **code_review**: general-reviewer, security-reviewer, performance-reviewer
 - **security_analysis**: security-reviewer, vulnerability-scanner
 
 ## Context Overlaps
+
 - **pull_requests**: general-reviewer, security-reviewer, docs-reviewer
 - **code_review**: general-reviewer, security-reviewer
 
 ## Related Agents
+
 - security-reviewer ↔ vulnerability-scanner (similarity: 0.75)
 - general-reviewer ↔ code-analyzer (similarity: 0.62)
 - docs-generator ↔ docs-reviewer (similarity: 0.58)
@@ -167,8 +170,10 @@ on:
   pull_request:
     paths:
       - "agents/**"
-      - "copilot/**"
+      - "prompts/**"
       - "schemas/**"
+      - "automation/**"
+      - "instructions/**"
   push:
     branches:
       - main

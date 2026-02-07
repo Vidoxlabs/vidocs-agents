@@ -11,10 +11,11 @@ This script analyzes agent configurations and prompts to identify:
 
 import json
 import os
-import yaml
+from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List
-from collections import defaultdict
+
+import yaml
 
 
 class AgentAnalyzer:
@@ -25,7 +26,7 @@ class AgentAnalyzer:
 
     def load_agents(self):
         """Load all agent configurations"""
-        agent_dirs = [self.repo_root / "agents", self.repo_root / "copilot" / "agents"]
+        agent_dirs = [self.repo_root / "agents"]
 
         for agent_dir in agent_dirs:
             if not agent_dir.exists():
