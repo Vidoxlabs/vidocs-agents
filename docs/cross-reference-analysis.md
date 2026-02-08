@@ -1,13 +1,16 @@
 # Agent Cross-Reference Analysis Report
-Total agents analyzed: 8
+Total agents analyzed: 20
 
 ## Capability Overlaps
+- **code_review**: template-agent, backend-architect
+- **documentation**: template-agent, backend-architect
+- **performance_optimization**: frontend-architect, sql-optimizer
 
 ## Context Overlaps
 - **typescript**: frontend-architect, monorepo-manager
-- **docker**: backend-architect, security-guardian
 - **kubernetes**: security-guardian, infrastructure-architect, observability-architect
 - **terraform**: security-guardian, infrastructure-architect
-- **docker_compose**: infrastructure-architect, observability-architect
+- **docker-compose**: infrastructure-architect, observability-architect
+- **database**: backend-architect, sql-optimizer
 
 ## Related Agents
